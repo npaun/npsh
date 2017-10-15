@@ -1,0 +1,15 @@
+* Build the shell with make.
+* run.h contains some defines you can use to change the shell's behaviour.
+	TC 	- enables TTY control (default)
+	DELAY	- enables artifical delays (default)
+* The shell is organized into separate modules
+	npsh	 - Main REPL (incl. parser)
+	run	 - Manages child processes, from fork to exec to wait
+	jobs	 - Maintains the internal structures used to track jobs
+	builtin	 - Implementations of shell builtins
+		BUILTIN_INLINE		- Run in the shell's main process
+		BUILTIN_FORK		- Run in a child process
+* Ctrl+\ still hasn't been touched by the signal handlers specified in the assignment, 
+  if you just want to quit.
+
+-- Nicholas Paun
